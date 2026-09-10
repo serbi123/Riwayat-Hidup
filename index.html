@@ -100,15 +100,14 @@
   .btn.primary:hover{ transform: translateY(-3px); box-shadow: 0 14px 26px -12px rgba(0,0,0,0.28); }
   .btn.ghost{ color:#fff; background:transparent; border:1px solid rgba(255,255,255,0.4); }
   .btn.ghost:hover{ transform: translateY(-3px); background: rgba(255,255,255,0.1); }
-  .btn svg{ width:15px; height:15px; }
+  .btn.icon-only{
+    padding: 13px; width:44px; height:44px; justify-content:center;
+  }
+  .btn.icon-only svg{ width:18px; height:18px; }
   .scroll-cue{ position:absolute; bottom:26px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; font-size:10.5px; color: rgba(255,255,255,0.65); letter-spacing:.08em; text-transform:uppercase; z-index:2; animation: bob 2.2s ease-in-out infinite; }
   @keyframes bob{ 0%,100%{ transform: translate(-50%,0); } 50%{ transform: translate(-50%,6px); } }
 
-  .ticker-wrap{ background: var(--blue-dark); overflow:hidden; padding:12px 0; border-top:1px solid rgba(255,255,255,0.12); border-bottom:1px solid rgba(255,255,255,0.12); }
-  .ticker{ display:flex; gap:34px; white-space:nowrap; animation: scrollTicker 22s linear infinite; width:max-content; }
-  .ticker span{ font-size:12.5px; font-weight:600; color:#DCE9EE; letter-spacing:.03em; }
-  .ticker span b{ color:#fff; }
-  @keyframes scrollTicker{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+  
 
   /* ================= SECTIONS ================= */
   section{ padding: 64px 0; border-bottom:1px solid var(--line); }
@@ -326,14 +325,16 @@
         Download CV
       </a>
       <a class="btn ghost" href="#experience">Lihat Pengalaman</a>
+      <a class="btn ghost icon-only" href="https://www.instagram.com/maulana_sudarya/" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a class="btn ghost icon-only" href="https://www.linkedin.com/in/muhammad-abi-maulana-sudarya-29a5b4197/" target="_blank" rel="noopener" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      </a>
     </div>
   </div>
   <div class="scroll-cue">Scroll ▾</div>
 </section>
-
-<div class="ticker-wrap">
-  <div class="ticker" id="tickerRow"></div>
-</div>
 
 <div class="wrap">
 
@@ -362,7 +363,6 @@
       </div>
     </div>
 
-    <div class="card-grid reveal" id="cardGrid"></div>
 
     <div style="margin-top:40px;">
       <div class="sec-head reveal" style="margin-bottom:18px;">
@@ -440,6 +440,12 @@
       <a class="btn ghost" href="CV_Muhammad_Abi_Maulana_Sudarya.pdf" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
         Download CV
+      </a>
+      <a class="btn ghost icon-only" href="https://www.instagram.com/maulana_sudarya/" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a class="btn ghost icon-only" href="https://www.linkedin.com/in/muhammad-abi-maulana-sudarya-29a5b4197/" target="_blank" rel="noopener" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
       </a>
     </div>
     <div class="footer-note">Bekasi City, Indonesia · Halaman profil pribadi</div>
@@ -626,7 +632,7 @@
   // { id:'a2', title:'Judul Kegiatan', description:'Ceritakan singkat...', date:'Agustus 2025', photo:'activities/nama-file.jpg' },
   // ============================================================
   const DEFAULT_CERTIFICATES = [
-     { id:'c1', name:'DevOps Fundamentals', validity:'s/d 08 Juli 2025', photo:'certs/dicoding.jpg' },
+    { id:'c1', name:'DevOps Fundamentals', validity:'s/d 08 Juli 2025', photo:'certs/dicoding.jpg' },
   ];
 
   const DEFAULT_ACTIVITIES = [
@@ -666,27 +672,6 @@
   ============================================================ */
   function escapeHtml(str){
     return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  }
-
-  function renderTicker(){
-    const row = document.getElementById('tickerRow');
-    const names = skills.map(s => s.name);
-    const set = names.map(n => `<span>⚙️ <b>${escapeHtml(n)}</b></span>`).join('');
-    row.innerHTML = set + set;
-  }
-
-  function renderCardGrid(){
-    const grid = document.getElementById('cardGrid');
-    grid.innerHTML = experiences.map(exp => `
-      <div class="prog-card reveal-scale in-view">
-        <div class="prog-top" style="background:${colorGrad(exp.color)};"><span>${escapeHtml(exp.period)}</span></div>
-        <div class="prog-body">
-          <div class="prog-title">${escapeHtml(exp.title)}</div>
-          <div class="prog-org">${escapeHtml(exp.org)}</div>
-          <div class="prog-desc">${escapeHtml(exp.bullets[0] || '')}</div>
-        </div>
-      </div>
-    `).join('');
   }
 
   function renderTimeline(){
@@ -745,8 +730,6 @@
   }
 
   function renderAll(){
-    renderTicker();
-    renderCardGrid();
     renderTimeline();
     renderSkills();
   }
@@ -857,7 +840,6 @@
     skills.push({ id: 'sk' + Date.now(), category, name });
     await saveSkills();
     renderSkills();
-    renderTicker();
     closeSkillModal();
   }
 
@@ -865,7 +847,6 @@
     skills = skills.filter(s => s.id !== id);
     await saveSkills();
     renderSkills();
-    renderTicker();
   }
 
   /* ============================================================
