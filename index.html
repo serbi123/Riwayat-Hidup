@@ -215,9 +215,9 @@
   .admin-banner.show{ display:flex; }
   .admin-banner button{ background:none; border:1px solid #2E5C55; color:#2E5C55; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700; cursor:pointer; }
 
-  .admin-only{ display:none; }
-  body.is-admin .admin-only{ display:inline-flex; }
-  body.is-admin .admin-only.block{ display:block; }
+  .admin-only{ display:none !important; }
+  body.is-admin .admin-only{ display:inline-flex !important; }
+  body.is-admin .admin-only.block{ display:block !important; }
 
   .add-btn{
     display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700;
@@ -384,13 +384,6 @@
     </div>
     <div class="info-card reveal">
       <div><div class="name">High School Diploma</div><div class="org">SMAN 1 Babelan</div><div class="meta">2012 – 2015</div></div>
-    </div>
-    <div class="info-card reveal">
-      <div><div class="name">DevOps Fundamentals</div><div class="org">Dicoding Indonesia</div><div class="meta">Terbit 2022</div></div>
-      <div class="badge">s/d Jul 2025</div>
-    </div>
-    <div class="info-card reveal">
-      <div><div class="name">Quality Assurance Engineer Bootcamp</div><div class="org">KEPO Aja Dulu</div></div>
     </div>
   </section>
 
@@ -580,7 +573,7 @@
   const hasStorage = (typeof window !== 'undefined') && !!window.storage;
 
   const DEFAULT_EXPERIENCES = [
-    { id:'e1', title:'IT Broadcasting', org:'MNC Animation', period:'Apr 2023 — 2026', loc:'West Jakarta, Indonesia', color:'blue',
+    { id:'e1', title:'IT Broadcasting', org:'MNC Animation', period:'Apr 2023 — Sekarang', loc:'West Jakarta, Indonesia', color:'blue',
       bullets:[
         'Memantau performa sistem agar operasional berjalan lancar.',
         'Mengelola backup sistem dan jadwal maintenance seluruh workstation desain grafis.',
